@@ -1,14 +1,38 @@
 <!DOCTYPE html>
 
 <head>
+
+   <!-- Page title -->
    <title>Device Manager</title>
-   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+   <!-- CSS -->
+   <link rel="stylesheet" type="text/css"
+         href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+         crossorigin="anonymous">
    <link rel="stylesheet" type="text/css" href="./style.css"/>
+
 </head>
 
 <body onload="load()">
 
-   <p>Hello world!</p>
+   <div class="navbar navbar-default">
+      <div class="navbar-header">
+         <a class="navbar-brand" href="#">Device Manager</a>
+      </div>
+   </div>
+
+   <div class="container-fluid">
+      <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
+         <div class="input-group">
+            <input class="form-control" type="text" placeholder="Search all devices"/>
+            <span class="input-group-btn">
+               <button type="button" class="btn btn-success search">Search</button>
+            </span>
+         </div>
+         <ul class="search-results list-group"></ul>
+      </div>
+   </div>
 
    <script src="./mootools-core.js"></script>
    <script src="./script.js"></script>
