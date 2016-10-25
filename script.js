@@ -13,7 +13,7 @@ function setupSearch() {
       if (searchText === "") return;
 
       var searchQuery = "https://www.ifixit.com/api/2.0/suggest/"
-         + encodeURIComponent(searchText);
+         + encodeURIComponent(searchText) + "?doctypes=device";
 
       $$(".search-results").set("display", "none");
 
@@ -22,7 +22,17 @@ function setupSearch() {
          "method": "get",
          "link": "cancel",
          "onSuccess": function(responseText) {
-            console.log(responseText);
+            var response = JSON.parse(responseText);
+            $$(".search-results").getChildren("li").each(function(element) {
+               $$(element).dispose();
+            });
+            for (var i = 0; i < response.results.length; i++) {
+               var listItem = new Element("li");
+               listItem.addClass("list-group-item");
+               listItem.appendHTML(response.results[i].title);
+               $$(".search-results").adopt(listItem);
+            }
+            $$(".search-results").set("display", "block");
          }
       });
 
@@ -31,3 +41,4 @@ function setupSearch() {
    });
 
 }
+
