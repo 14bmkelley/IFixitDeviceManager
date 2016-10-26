@@ -23,10 +23,38 @@
    </div>
 
    <div class="container-fluid">
+      
       <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
+         
+         <!-- Search -->
          <input class="form-control search-input" type="text" placeholder="Search all devices"/>
          <ul class="list-group search-results"></ul>
+         
+         <!-- My Devices -->
+         <div class="my-devices">
+            <h3 class="device-title">My Devices</h3>
+            <p class="device-message">You have no devices yet. Added devices will appear here.</p>
+            <div class="devices"></div>
+         </div>
+
+         <!-- Device details -->
+         <div class="device-details">
+            <img align="right" class="details-img" src=""/>
+            <h3 class="details-title"></h3>
+            <p class="details-description"></p>
+            <p><a target="_blank" class="details-link">Go to the iFixit Device Wiki &gt;</a></p>
+            <div class="row">
+               <div class="col-xs-6">
+                  <button type="button" class="btn btn-success add-device">Add to my devices</button>
+               </div>
+               <div class="col-xs-6">
+                  <button type="button" class="btn btn-danger remove-device">Remove from my devices</button>
+               </div>
+            </div>
+         </div>
+
       </div>
+
    </div>
 
    <script src="./mootools-core.js"></script>
